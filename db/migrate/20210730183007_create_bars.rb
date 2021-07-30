@@ -5,7 +5,7 @@ class CreateBars < ActiveRecord::Migration[6.1]
       t.string :description
       t.integer :coords
       t.integer :rating
-      t.belongs_to :city
+      t.string :city
     end
   end
 end
