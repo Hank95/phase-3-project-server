@@ -1,5 +1,9 @@
 puts "🌱 Seeding spices..."
 
+BarGameType.destroy_all
+Game.destroy_all
+Bar.destroy_all
+
 # Seed your database here
 
 pool = BarGameType.create(game_type: "Pool", description: "Pool, covering numerous pocket billiards games generally played on six-pocket tables of 7-, 8-, 9-, or 10-foot length, including among others eight-ball (the world's most widely played cue sport), nine-ball (the dominant professional game), ten-ball, straight pool (the formerly dominant pro game), one-pocket, and bank pool")
@@ -9,11 +13,12 @@ foosball = BarGameType.create(game_type: "Foosball", description: "The aim of th
 arcade = BarGameType.create(game_type: "Arcade",  description: "Pinball, Pacman, Skeeball, or any other coin-op game")
 
 50.times do
+    cities = ["hasgdfjha", "Chicago", "Province"]
     bar = Bar.create(
         name: Faker::Company.name,
         description: Faker::Lorem.sentence,
         rating: rand(1..10),
-        city: Faker::Address.city,
+        city: cities[rand(1..2)],
         latitude: Faker::Address.latitude,
         longitude: Faker::Address.longitude)
 
