@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_02_142307) do
+ActiveRecord::Schema.define(version: 2021_08_03_210112) do
 
   create_table "bar_game_types", force: :cascade do |t|
     t.string "game_type"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2021_08_02_142307) do
     t.string "description"
     t.integer "rating"
     t.string "city"
-    t.integer "latitude"
-    t.integer "longitude"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "games", force: :cascade do |t|
