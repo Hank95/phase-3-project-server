@@ -22,5 +22,14 @@ class ApplicationController < Sinatra::Base
     bars.to_json
   end
 
+  post '/bars' do 
+    bar = Bar.create(
+      name: params[:name],
+      description: params[:description],
+      city: params[:city],
+    )
+    bar.to_json
+  end
+
 
 end
