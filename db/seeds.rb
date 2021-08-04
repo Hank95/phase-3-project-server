@@ -13,7 +13,7 @@ foosball = BarGameType.create(game_type: "Foosball", description: "The aim of th
 arcade = BarGameType.create(game_type: "Arcade",  description: "Pinball, Pacman, Skeeball, or any other coin-op game")
 
 50.times do
-    cities = ["hasgdfjha", "Chicago", "Province"]
+    cities = ["hasgdfjha", "Chicago", "Providence"]
     bar = Bar.create(
         name: Faker::Company.name,
         description: Faker::Lorem.sentence,
