@@ -13,18 +13,28 @@ foosball = BarGameType.create(game_type: "Foosball", description: "The aim of th
 arcade = BarGameType.create(game_type: "Arcade",  description: "Pinball, Pacman, Skeeball, or any other coin-op game")
 
 50.times do
-    cities = ["hasgdfjha", "Chicago", "Providence"]
     bar = Bar.create(
         name: Faker::Company.name,
         description: Faker::Lorem.sentence,
         rating: rand(1..10),
-        city: cities[rand(1..2)],
-        latitude: Faker::Address.latitude,
-        longitude: Faker::Address.longitude)
+        city: "Chicago",
+        latitude: rand(41.807149..41.953873),
+        longitude: rand(-87.739764..-87.614108)
+    )
 
     Game.create(bar_id: bar.id, bar_game_type_id: rand(1..5), amount: rand(1..7))
+end
+50.times do
+    bar = Bar.create(
+        name: Faker::Company.name,
+        description: Faker::Lorem.sentence,
+        rating: rand(1..10),
+        city: "Providence",
+        latitude: rand(41.796929..41.868044),
+        longitude: rand(-71.458654..-71.354971)
+    )
 
-
+    Game.create(bar_id: bar.id, bar_game_type_id: rand(1..5), amount: rand(1..7))
 end
 
 
