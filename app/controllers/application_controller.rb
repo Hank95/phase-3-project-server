@@ -28,6 +28,8 @@ class ApplicationController < Sinatra::Base
       description: params[:description],
       rating: params[:rating],
       city: params[:city],
+      latitude: params[:latitude],
+      longitude: params[:longitude],
     )
     game = Game.create(
       bar_id: bar.id,
