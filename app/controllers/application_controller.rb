@@ -26,9 +26,16 @@ class ApplicationController < Sinatra::Base
     bar = Bar.create(
       name: params[:name],
       description: params[:description],
+      rating: params[:rating],
       city: params[:city],
     )
-    bar.to_json
+    game = Game.create(
+      bar_id: bar.id,
+      bar_game_type_id: params[:game],
+      amount: params[:amount]
+
+    )
+    bar.to_json(include: :bar_game_types)
   end
 
 
