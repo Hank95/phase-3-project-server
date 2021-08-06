@@ -15,7 +15,7 @@ arcade = BarGameType.create(game_type: "Arcade",  description: "Pinball, Pacman,
 50.times do
     bar = Bar.create(
         name: Faker::Company.name,
-        description: Faker::Lorem.sentence,
+        description: Faker::Lorem.paragraph,
         rating: rand(1..10),
         city: "Chicago",
         latitude: rand(41.807149..41.953873),
@@ -27,7 +27,7 @@ end
 50.times do
     bar = Bar.create(
         name: Faker::Company.name,
-        description: Faker::Lorem.sentence,
+        description: Faker::Lorem.paragraph,
         rating: rand(1..10),
         city: "Providence",
         latitude: rand(41.796929..41.868044),

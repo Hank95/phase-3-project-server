@@ -12,15 +12,12 @@ class ApplicationController < Sinatra::Base
     game_types.to_json
   end
 
-  # get "/bars" do 
-  #   bars = Bar.all
-  #   bars.to_json()
-  # end
-
-  get "/bars/:bar_game_types/:city" do
-    bars = Bar.where(params[:bar_game_types, :city])
-    bars.to_json
+  delete '/bars/:id' do 
+    bar = Bar.find(params[:id])
+    bar.destroy
+    bar.to_json
   end
+
 
   post '/bars' do 
     bar = Bar.create(
